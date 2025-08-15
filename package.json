@@ -1,0 +1,25 @@
+{
+  "name": "graphql-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "start": "env-cmd npm run get-schema && npm run generated:docs && npm run start:docs",
+    "get-schema": "env-cmd tsx main.ts",
+    "generated:docs": "env-cmd graphdoc -s ./schema.json -f -o ./docs",
+    "start:docs": "http-server ./docs -p 4545"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@2fd/graphdoc": "^2.4.0",
+    "graphql": "^16.9.0"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "http-server": "^14.1.1",
+    "isomorphic-fetch": "^3.0.0",
+    "tsx": "^4.20.4"
+  }
+}
