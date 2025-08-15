@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.ts",
   "scripts": {
-    "start": "env-cmd npm run get-schema && npm run generated:docs && npm run start:docs",
+    "start": "env-cmd pnpm get-schema && pnpm generated:docs && pnpm start:docs",
     "get-schema": "env-cmd tsx main.ts",
     "generated:docs": "env-cmd graphdoc -s ./schema.json -f -o ./docs",
     "start:docs": "http-server ./docs -p 4545"
